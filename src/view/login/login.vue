@@ -55,7 +55,7 @@ export default {
             trigger: "blur"
           }
         ],
-        password: [
+        password: [//测试提交
           {
             required: true,
             validator: checkPasswordConten,
