@@ -13,7 +13,7 @@
 <script>
 import { loginAndUserApi } from "@/apiController/loginAndUser.js";
 export default {
-// 1、提交测试4
+// 1、提交测试5
 
     data() {
         return {
@@ -24,7 +24,7 @@ export default {
         this.getUserList()
     },
     methods: {
-        // 获取用户列表
+        // 获取用户列表23424523432534523
         getUserList(){
             loginAndUserApi.userList().then((res) => {
                 debugger
