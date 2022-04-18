@@ -4,13 +4,14 @@ import Vue from 'vue'
 import App from './App'
 // 引入路由表，并挂载到vue实例，让vue实例管理router路由表
 import router from './router'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 
+// 安装elementUI，并安装
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css' // use element
 Vue.use(ElementUI)
 
 import AmapVue from '@amap/amap-vue';
-AmapVue.config.key = '8504055149efad1235b7e2508acc97c4'
+AmapVue.config.key = 'b968c1806a3b5e6fad44ab8e731877a6'
 
 Vue.use(AmapVue)
 

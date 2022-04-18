@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@amap/amap-vue": "^2.0.13",
+    "axios": "^0.26.1",
     "element-ui": "^2.15.6",
     "vue": "^2.5.2",
-    "vue-router": "^3.5.2"
+    "vue-router": "^3.5.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

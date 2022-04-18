@@ -11,7 +11,7 @@ const router = new VueRouter({
         // name: 'index',
         // component: MapView,
         component: () =>
-            import ('@/view/mapView/index.vue'), //这是一种动态路由的写法，懒加载。也可以直接在最上面导入import，然后这里加组件名字
+            import ('@/view/login/login.vue'), //这是一种动态路由的写法，懒加载。也可以直接在最上面导入import，然后这里加组件名字
         // 路由元，可以用来路由判断的
         meta: {
             a: true
@@ -20,6 +20,22 @@ const router = new VueRouter({
         // children: [{
 
         // }]
+    }, {
+        path: '/home',
+        name: 'home',
+        component: () =>
+            import ('@/view/home/home.vue'),
+        meta: {
+            a: true
+        }
+    }, {
+        path: '/register',
+        name: 'register',
+        component: () =>
+            import ('@/view/login/register.vue'),
+        meta: {
+            a: true
+        }
     }]
 })
 
