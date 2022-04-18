@@ -10,11 +10,18 @@
     </div>
 </template>
 
+<<<<<<< HEAD
 <script>
 import { loginAndUserApi } from "@/apiController/loginAndUser.js";
 export default {
 // 1、提交测试1
 
+=======
+
+<script>
+import { loginAndUserApi } from "@/apiController/loginAndUser.js";
+export default {
+>>>>>>> 8b22644 (no message)
     data() {
         return {
             formData:[]
@@ -24,7 +31,11 @@ export default {
         this.getUserList()
     },
     methods: {
+<<<<<<< HEAD
         // 获取用户列表23424523432534523
+=======
+        // 获取用户列表
+>>>>>>> 8b22644 (no message)
         getUserList(){
             loginAndUserApi.userList().then((res) => {
                 debugger
