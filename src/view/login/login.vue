@@ -55,7 +55,8 @@ export default {
             trigger: "blur"
           }
         ],
-        password: [//测试提交
+        password: [
+          //测试提交
           {
             required: true,
             validator: checkPasswordConten,
@@ -66,8 +67,8 @@ export default {
     };
   },
   methods: {
-    register(){
-      this.$router.push({path:'/register',params:{}})
+    register() {
+      this.$router.push({ path: "/register", params: {} });
     },
     // 登录方法
     loginClick() {
