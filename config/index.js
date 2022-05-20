@@ -11,18 +11,30 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
+            // 直接访问后台开发的服务器端口
+            // "/proxy": {
+            //     target: "http://101.34.237.224:8090",
+            //     changeOrigin: true,
+            //     pathRewrite: {
+            //         "^/proxy": ""
+            //     },
+            //     logLevel:'debug'
+            // },
+            // 直接访问前端nginx代理
             "/proxy": {
-                target: "http://localhost:8090",
+                target: "http://101.34.237.224:8081",
+                // target: "http://101.34.237.224:8090",
                 changeOrigin: true,
                 pathRewrite: {
-                    "^/proxy": ""
-                }
+                    "^/proxy": "/proxy"
+                },
+                logLevel:'debug'
             }
         },
 
         // Various Dev Server settings
         host: 'localhost', // can be overwritten by process.env.HOST
-        port: 8090, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+        port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
         autoOpenBrowser: false,
         errorOverlay: true,
         notifyOnErrors: true,
