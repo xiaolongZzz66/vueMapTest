@@ -36,6 +36,22 @@ const router = new VueRouter({
         meta: {
             a: true
         }
+    }, {
+        path: '/father',
+        name: 'father',
+        component: () =>
+            import ('@/view/home/father.vue'),
+        meta: {
+            a: true
+        }
+    }, {
+        path: '/uncle',
+        name: 'uncle',
+        component: () =>
+            import ('@/view/home/uncle.vue'),
+        meta: {
+            a: true
+        }
     }]
 })
 

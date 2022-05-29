@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+    <el-row>
+      <el-button @click="toExc">点击去父亲家</el-button>
+      <el-button @click="touncle">点击去叔叔家</el-button>
+    </el-row>
     <el-row class="home-top" :gutter="1">
       <el-form :model="userForm" label-width="80px">
         <el-col :span="6">
@@ -101,6 +105,13 @@ export default {
           this.formData = data;
         }
       });
+    },
+    // 路由跳转
+    toExc(){
+      this.$router.push("/father")
+    },
+    touncle(){
+      this.$router.push("/uncle")
     }
   }
 };
