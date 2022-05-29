@@ -91,7 +91,7 @@ export default {
       this.dialogVisible = false
     },
     showMap() {
-      this.dialogVisible = true;
+      this.dialogVisible = true;  
     }
   }
 };
