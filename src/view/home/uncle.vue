@@ -182,7 +182,7 @@ export default {
         console.log(item); //cities的每一项
         if (this.checkedCities.includes(item.prop)) {
           arr.push(item);
-        }
+        }  
       });
       debugger;
       //   // 将组合好的数组赋值给表格列表
