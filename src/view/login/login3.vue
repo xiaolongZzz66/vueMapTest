@@ -32,7 +32,7 @@ export default{
                 }
         };
         return{
-            loginForm:{},
+            loginForm:{},  
             loginFormRules:{
                 //登录表单校验 
               username:[
