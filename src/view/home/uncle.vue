@@ -155,6 +155,7 @@ export default {
         }
       });
     },
+
     // 路由跳转
     touncle() {
       this.$router.push("/home");
@@ -163,28 +164,50 @@ export default {
     tableHeaderSetClick() {
       this.dialogTableVisible = true;
     },
-    // 设置表头确认按钮
+    //  设置表头确认按钮
     confirmTableHeaderClick() {
       debugger;
-      //   [
-      //   { label: "用户名", prop: "username" },
-      //   { label: "角色", prop: "role" },
-      //   { label: "邮箱", prop: "email" },
-      //   { label: "电话", prop: "mobile" },
-      //   { label: "创建时间", prop: "createTime" },
-      // ],
-
       // 关闭对话框
       this.dialogTableVisible = false;
-      // 下面是遍历cities(所有的表头数组)，然后拿每一项判断，是否包含在选择的值里面，如果选择的值包含当前循环项，那么就把当前这个循环项{label:"",prop:''}放入新数组中。
+      // this.checkedCities: ["username", "role", "email"];
+      //this.tableHeaderList: [{ label: "用户名", prop: "username" }, { label: "角色", prop: "role" },{ label: "邮箱", prop: "email" }]
+      //this.cities: [{ label: "用户名", prop: "username" }, { label: "角色", prop: "role" },{ label: "邮箱", prop: "email" },{ label: "电话", prop: "mobile" },{ label: "创建时间", prop: "createTime" }]
+      // 下面是遍历cities(所有的表头数组)，然后拿每一项判断，是否包含在选择的值里面，
+      // 如果选择的值包含当前循环项，那么就把当前这个循环项{label:"",prop:''}放入新数组中。
+      // includes包括
       let arr = [];
       this.cities.forEach((item) => {
         debugger;
+        console.log(this.checkedCities); //选择的值的数组
+        console.log(item); //cities的每一项
         if (this.checkedCities.includes(item.prop)) {
           arr.push(item);
         }
       });
-      // 将组合好的数组赋值给表格列表
+      debugger;
+      //   // 将组合好的数组赋值给表格列表
+      //   // 赋值语句， 把右边赋值给左边 ，把arr赋值给tableHeaderList
+      this.tableHeaderList = arr;
+      // doLayout	对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法
+      this.$refs.table.doLayout();
+    },
+    //  设置表头确认按钮
+    confirmTableHeaderClick222222() {
+      // 关闭对话框
+      this.dialogTableVisible = false;
+      let arr = [];
+      this.checkedCities.forEach((item) => {
+        // this.checkedCities: ["username", "role", "email"];
+        //this.tableHeaderList: [{ label: "用户名", prop: "username" }, { label: "角色", prop: "role" },{ label: "邮箱", prop: "email" }]
+        //this.cities: [{ label: "用户名", prop: "username" }, { label: "角色", prop: "role" },{ label: "邮箱", prop: "email" },{ label: "电话", prop: "mobile" },{ label: "创建时间", prop: "createTime" }]
+        this.cities.forEach((itemCity) => {
+          if (itemCity.prop == item) {
+            arr.push(itemCity);
+          }
+        });
+      });
+      //   // 将组合好的数组赋值给表格列表
+      //   // 赋值语句， 把右边赋值给左边 ，把arr赋值给tableHeaderList
       this.tableHeaderList = arr;
       // doLayout	对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法
       this.$refs.table.doLayout();
