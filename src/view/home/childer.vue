@@ -28,6 +28,11 @@
           <el-form-item>
             <el-button @click="searchClick">搜索</el-button>
             <el-button @click="resetLoginForm">重置</el-button>
+            <slot name="tableSet" />
+            <!-- ???????? -->
+             <slot name="scope" />
+            
+            
             <!-- 重置功能 -->
             <!-- 1、清空表单（搜索）的数据
             2、请求Ajax，然后将返回的列表展示出来 -->

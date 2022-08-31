@@ -9,8 +9,11 @@
       :roleLists="roleList"
       @searchListClik="searchList"
       @refchongzhi="chongzhi"
-    ></childer>
-    <el-button @click="tableHeaderSetClick">表头设置</el-button>
+    >
+      <template slot="tableSet">  
+        <el-button @click="tableHeaderSetClick">表头设置</el-button>
+      </template>
+    </childer>
 
     <el-row class="home-content">
       <el-table :data="formData" ref="table">
@@ -30,6 +33,7 @@
           align="center"
           :label="item.label"
         >
+        
         </el-table-column>
       </el-table>
     </el-row>
@@ -85,6 +89,7 @@ export default {
         { label: "邮箱", prop: "email" },
         { label: "电话", prop: "mobile" },
         { label: "创建时间", prop: "createTime" },
+        {label:"操作",prop:"operate"},
       ],
       cities: [
         //所有表头项
@@ -93,6 +98,8 @@ export default {
         { label: "邮箱", prop: "email" },
         { label: "电话", prop: "mobile" },
         { label: "创建时间", prop: "createTime" },
+         {label:"操作",prop:"operate"},
+      
       ],
       isIndeterminate: true,
     };
@@ -182,7 +189,7 @@ export default {
         console.log(item); //cities的每一项
         if (this.checkedCities.includes(item.prop)) {
           arr.push(item);
-        }  
+        }
       });
       debugger;
       //   // 将组合好的数组赋值给表格列表

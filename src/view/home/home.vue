@@ -42,6 +42,7 @@
         <el-table-column label="邮箱：" prop="email"></el-table-column>
         <el-table-column label="电话：" prop="mobile"></el-table-column>
         <el-table-column label="创建时间：" prop="createTime"></el-table-column>
+        
       </el-table>
     </el-row>
   </div>
